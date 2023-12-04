@@ -5,7 +5,7 @@ CREATE TABLE bar
 
 CREATE TABLE bar_external
 (
-    id     BIGSERIAL PRIMARY KEY,
+    bar_external_id     BIGSERIAL PRIMARY KEY,
     bar_id UUID NOT NULL REFERENCES bar (id)
 );
 

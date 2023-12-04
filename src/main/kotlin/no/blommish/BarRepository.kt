@@ -4,6 +4,7 @@ import no.blommish.repository.InsertUpdateRepository
 import no.blommish.repository.RepositoryInterface
 import org.springframework.data.annotation.Id
 import org.springframework.data.jdbc.core.JdbcAggregateOperations
+import org.springframework.data.relational.core.mapping.Column
 import org.springframework.data.relational.core.mapping.MappedCollection
 import org.springframework.data.relational.core.mapping.Table
 import org.springframework.stereotype.Component
@@ -33,5 +34,5 @@ data class Bar(
 @Table("bar_external")
 data class ExternalBarId(
     @Id
-    val id: Long = 0,
+    val barExternalId: Long = 0,
 )

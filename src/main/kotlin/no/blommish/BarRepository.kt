@@ -27,7 +27,7 @@ data class Bar(
     @Id
     val id: UUID = UUID.randomUUID(),
     @MappedCollection(idColumn = "bar_id")
-    val eksternId: ExternalBarId = ExternalBarId(),
+    val eksternId: Set<ExternalBarId> = setOf(ExternalBarId()),
 )
 
 @Table("bar_external")

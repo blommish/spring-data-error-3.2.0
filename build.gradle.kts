@@ -3,14 +3,14 @@ plugins {
     id("org.springframework.boot") version "3.2.0"
     id("io.spring.dependency-management") version "1.1.4"
 
-    kotlin("jvm") version "1.9.10"
-    kotlin("plugin.spring") version "1.9.10"
+    kotlin("jvm") version "1.9.22"
+    kotlin("plugin.spring") version "1.9.22"
 }
 
 group = "no.blommish.spring-data-error"
 version = "0.0.1-SNAPSHOT"
 
-val javaVersion = JavaLanguageVersion.of(17)
+val javaVersion = JavaLanguageVersion.of(21)
 
 kotlin {
     jvmToolchain(javaVersion.asInt())

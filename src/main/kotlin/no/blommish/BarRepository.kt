@@ -11,9 +11,7 @@ import org.springframework.stereotype.Repository
 import java.util.*
 
 @Repository
-interface BarRepository :
-    RepositoryInterface<Bar, UUID>,
-    InsertUpdateRepository<Bar>
+interface BarRepository : RepositoryInterface<Bar, BarId>, InsertUpdateRepository<Bar>
 
 @Component
 class BarRepository2(val entityOperations: JdbcAggregateOperations) {
@@ -23,15 +21,9 @@ class BarRepository2(val entityOperations: JdbcAggregateOperations) {
     }
 }
 
+@JvmInline
+value class BarId(val id: UUID)
 data class Bar(
     @Id
-    val id: UUID = UUID.randomUUID(),
-    @MappedCollection(idColumn = "bar_id")
-    val eksternId: ExternalBarId = ExternalBarId(),
-)
-
-@Table("bar_external")
-data class ExternalBarId(
-    @Id
-    val id: Long = 0,
+    val id: BarId = BarId(UUID.randomUUID()),
 )
